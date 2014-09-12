@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable atom-collab': 'atom-collab:toggle'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'atom-collab'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'atom-collab:toggle' }
+      ]
+    ]
+  }
+]
