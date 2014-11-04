@@ -1,7 +1,7 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
   '.overlayer':
-      'Enable atom-collab': 'atom-collab:toggle'
+      'Enable atom-collab': 'atom-collab:join-server'
 
 'menu': [
   {
@@ -9,7 +9,7 @@
     'submenu': [
       'label': 'atom-collab'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'atom-collab:toggle' }
+        { 'label': 'Join Server', 'command': 'atom-collab:join-server' }
       ]
     ]
   }

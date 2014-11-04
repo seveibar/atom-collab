@@ -1,13 +1,13 @@
-AtomCollabView = require './atom-collab-view'
+JoinServerView = require './join-server-view'
 
 module.exports =
   atomCollabView: null
 
   activate: (state) ->
-    @atomCollabView = new AtomCollabView(state.atomCollabViewState)
+    @joinServerView = new JoinServerView(state.joinServerView)
 
   deactivate: ->
-    @atomCollabView.destroy()
+    @joinServerView.destroy()
 
   serialize: ->
-    atomCollabViewState: @atomCollabView.serialize()
+    joinServerView: @joinServerView.serialize()

@@ -3,7 +3,7 @@
   "main": "./lib/atom-collab",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "activationEvents": ["atom-collab:toggle"],
+  "activationEvents": ["atom-collab:join-server"],
   "repository": "https://github.com/atom/atom-collab",
   "license": "MIT",
   "engines": {
