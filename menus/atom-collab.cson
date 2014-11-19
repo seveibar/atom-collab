@@ -9,7 +9,12 @@
     'submenu': [
       'label': 'atom-collab'
       'submenu': [
-        { 'label': 'Join Server', 'command': 'atom-collab:join-server' }
+        {'label': 'Join Server', 'command': 'atom-collab:join-server'},
+        {'label': 'Sync Filesystem', 'command': 'atom-collab:sync-filesystem'},
+        {'label': 'Join Session', 'command': 'atom-collab:join-session'},
+        {'label': 'Ghost Session', 'command': 'atom-collab:ghost-session'},
+        {'label': 'Sync File', 'command': 'atom-collab:sync-file'},
+        {'label': 'File Done', 'command': 'atom-collab:file-done'}
       ]
     ]
   }
