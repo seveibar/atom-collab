@@ -1,0 +1,3 @@
+[submodule "lib/git-collab"]
+	path = lib/git-collab
+	url = https://github.com/seveibar/git-collab.git
