@@ -3,7 +3,15 @@
   "main": "./lib/atom-collab",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "activationEvents": ["atom-collab:join-server"],
+  "activationEvents": [
+      "atom-collab:join-server",
+      "atom-collab:sync-filesystem",
+      "atom-collab:join-session",
+      "atom-collab:ghost-session",
+      "atom-collab:sync-file",
+      "atom-collab:file-done",
+      "atom-collab:notification-test"
+  ],
   "repository": "https://github.com/atom/atom-collab",
   "license": "MIT",
   "engines": {

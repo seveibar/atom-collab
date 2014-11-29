@@ -6,19 +6,24 @@ class JoinServerView extends View
     view = this
     @div class: 'atom-collab overlay from-top', =>
         @div "Join Server", class: "input-label"
-        @input value:"", class:"input-text server"
+        @input value:"http://localhost:4444", class:"native-key-bindings input-text server"
         @div class:"input-buttons", =>
             @button "Join", class:"input-button join"
             @button "Cancel", class:"input-button cancel"
 
-  initialize: (serializeState) ->
+  initialize: (serializeState, joinServer) ->
     atom.workspaceView.command "atom-collab:join-server", => @triggered()
 
     view = this
 
     this.on "click", ".join", (event) ->
-        console.log("Joining",view.find(".server").val());
+        joinServer view.find(".server").val()
         view.detach()
+
+    this.on "keydown", ".server", (event) ->
+        if event.keyCode == 13
+            joinServer view.find(".server").val()
+            view.detach()
 
     this.on "click", ".cancel", (event) ->
         view.detach()
@@ -34,3 +39,4 @@ class JoinServerView extends View
     console.log "Join Server View Triggered"
     if !@hasParent()
       atom.workspaceView.append(this)
+      @find(".server")[0].focus();
