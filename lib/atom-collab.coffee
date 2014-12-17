@@ -1,4 +1,5 @@
 JoinServerView = require './join-server-view'
+SimpleInputView = require './simple-input-view'
 JoinSessionView = require './join-session-view'
 NotificationView = require './notification-view'
 conn = require("./git-collab/client-server/SocketListener.js");
@@ -14,6 +15,7 @@ module.exports =
         @joinSessionView = new JoinSessionView(state.joinSessionView, (sid) => @joinSession(sid))
         @notificationView = new NotificationView(state.notificationView);
         atom.workspaceView.command "atom-collab:join-session", => @displaySessions()
+        atom.workspaceView.command "atom-collab:name-session", => @nameSession()
         atom.workspaceView.command "atom-collab:sync-filesystem", =>
         atom.workspaceView.command "atom-collab:ghost-session", =>
         atom.workspaceView.command "atom-collab:sync-file", =>
@@ -28,6 +30,13 @@ module.exports =
             conn.sendLogMessage "Connected!"
             @notificationView.notify "Successfully joined server!"
             @connected = true
+
+    nameSession: ->
+        if @connected
+            new SimpleInputView "New Session Name", (response)->
+                if response
+                    conn.setSessionDescription(response)
+
 
     joinSession: (sessionID) ->
         conn.joinSession sessionID, =>

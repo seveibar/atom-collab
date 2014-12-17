@@ -5,6 +5,7 @@
   "description": "A short description of your package",
   "activationEvents": [
       "atom-collab:join-server",
+      "atom-collab:name-session",
       "atom-collab:sync-filesystem",
       "atom-collab:join-session",
       "atom-collab:ghost-session",
