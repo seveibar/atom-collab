@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Enable agcollab': 'agcollab:toggle'
+#
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'agcollab'
+      'submenu': [
+        { 'label': 'Toggle', 'command': 'agcollab:toggle' }
+      ]
+    ]
+  }
+]
