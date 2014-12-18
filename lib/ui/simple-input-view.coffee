@@ -11,10 +11,11 @@ class SimpleInputView extends View
             @button "OK", class:"input-button ok"
             @button "Cancel", class:"input-button cancel"
 
-  initialize: (title, responseCallback) ->
+  initialize: (info, responseCallback) ->
     view = this
 
-    this.find(".input-label").text(title)
+    this.find(".input-label").text(info.title)
+    this.find(".input-text").val(info.default || "");
 
     this.on "click", ".ok", (event) ->
         responseCallback view.find(".input-text").val()
